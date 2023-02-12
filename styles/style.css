@@ -1,133 +1,182 @@
-/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
-
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  background-color: #fcfcfc;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: right;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 14px;
-  height: 60px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #f2f2f2;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #efefef;
-}
-
-/* Style the tab content */
-.tabcontent {
-  padding: 6px 12px;
-  border: 1px solid #efefef;
-  border-top: none;
-  font-family: 'Quicksand', sans-serif;
-}
-
-html{
-  background-color: #fcfcfc;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
 }
 
 body{
+  /*background: url('../images/background.jpeg');*/
+  background-color: #efefef;
+  background-size: cover;
+  align-items: center;
   align-content: center;
 }
 
-img{
+.containerRegistration{
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 28px;
+  margin: 10px auto 10px auto;
+  border-radius: 10px;
+}
+
+.form-title{
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 6px;
+  color: white;
+  border-bottom: sold 1px white;
+}
+
+.main-user-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.user-input-box:nth-child(2n){
+  justify-content: end;
+}
+
+.user-input-box{
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  padding-bottom: 15px;
+}
+
+.user-input-box label{
+  width: 95%;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+.user-input-box input{
+  height: 40px;
+  width: 95%;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+
+.form-submit-btn{
+  margin-top: 40px;
+}
+
+.form-submit-btn input{
+  cursor: pointer;
   display: block;
-  margin: 0 auto;
-  align: center;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: white;
 }
 
-#signature {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 12px;
-  color: #094370;
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 12px;
+.form-submit-btn input:hover{
+  background-color: #efefef;
 }
 
-.h1{
-  font-size: 48px;
-  font-family: 'Georgia';
-  font-style: italic;
-  font-weight: bold;
-  color: #0f7009;
+@media(max-width: 800px){
+  .container{
+    min-width: 280px;
+  }
+
+  .user-input-box{
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .user-input-box:nth-child(2n){
+    justify-content: space-between;
+  }
+
+  .main-user-info{
+    max-height: 380px;
+    overflow: auto;
+  }
+
+  .main-user-info::-webkit-scrollbar{
+    width: 0;
+  }
+
 }
 
-/* 
-  closeable banner;
-  code adapted from @dcode-software 
-  https://www.youtube.com/watch?v=x-LVUk2IxDU -ms
-*/
+.container{
+  max-width: 900px;
+  margin: 10px auto 10px auto;
+  align-items: center;
+}
 
 .banner {
-  background: #094370;
+  background: #151717;
+  height: 100px;
+  position: relative;
 }
 
 .banner_content {
   padding: 16px;
-  max-width: 550px;
+  padding-left: 50px;
   margin: 0 auto;
   display: flex;
   align-items: center;
 }
 
 .banner_text {
-  flex-grow: 1;
-  line-height: 1.4;
+  font-size: 48px;
   font-family: 'Quicksand', sans-serif;
   font-style: lighter;
-}
-
-.banner_close {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.banner_text,
-.banner_close > span {
   color: white;
 }
 
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
+.banner_text_bottom {
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  font-style: lighter;
+  color: white;
+  bottom: 12px;
+  margin-left: 16px;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc;
+.logo{
+  position: absolute;
+  top: 12px;
+  right: 16px;
 }
 
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
+.card {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #ccc;
+}
+h1 {
+  margin-bottom: 20px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.price {
+  font-size: 18px;
+  color: #999;
+  margin-top: 5px;
 }
